@@ -2,6 +2,8 @@
   "name": "craftserve-bot",
   "version": "1.0.0",
   "dependencies": {
-    "discord.js": "^12.5.3"
+    "discord.js": "^12.5.3",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.2"
   }
 }
