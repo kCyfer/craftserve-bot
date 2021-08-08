@@ -1,5 +1,5 @@
 .idea
+*.iml
 node_modules
 config.json
-*.iml
-package-lock.json
+permissions.json
