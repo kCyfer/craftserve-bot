@@ -1,5 +1,5 @@
 .idea
 *.iml
 node_modules
-config.json
-permissions.json
+config.js
+permissions.js
