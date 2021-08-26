@@ -1,15 +1,39 @@
-﻿const Discord = require('discord.js');
-const {token} = require('./config.json');
-const bot = new Discord.Client({
-    disableMentions: "everyone",
-    messageCacheLifetime: 3600,
+import dotenv from 'dotenv';
+dotenv.config();
+
+import fs from 'fs';
+import { Client, Collection, Intents } from 'discord.js';
+import permissions from './permissions.js';
+const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_INTEGRATIONS] });
+
+client.commands = new Collection();
+
+import Database from "./Database.js";
+
+Database();
+
+fs.readdirSync('./commands/').forEach(async dir => {
+	const commandFiles = fs.readdirSync(`./commands/${dir}/`).filter(file => file.endsWith('.js'));
+
+	for (const file of commandFiles) {
+		const command = (await import(`./commands/${dir}/${file}`)).default;
+		command.category = dir;
+		if(!command.permissions) command.permissions = permissions[dir];
+		client.commands.set(command.name, command);
+	}
 });
 
-bot.commands = new Discord.Collection()
-bot.aliases = new Discord.Collection();
-bot.owners = ["307212579305160704", "749259944678785085", "464890810710622210"]
+const eventFiles = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
 
-require("./commandHandler")(bot)
-require("./events/eventHandler")(bot);
+for (const file of eventFiles) {
+	const event = (await import(`./events/${file}`)).default;
 
-return bot.login(token);
+	if (event.once) {
+		client.once(event.name, (...args) => event.execute(...args, client));
+	} else {
+		client.on(event.name, (...args) => event.execute(...args, client));
+	}
+}
+
+
+client.login(process.env.TOKEN);
