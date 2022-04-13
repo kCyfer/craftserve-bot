@@ -9,6 +9,10 @@ const checkInvite = async(message) => {
     if(!matches) return false;
 
     const res = await fetch(`https://discord.com/api/invites/${matches[6]}`).catch(r => console.log(r));
+    if(!res.ok) {
+        console.error(res.status, res.statusText);
+        return true;
+    }
     const json = await res.json();
 
     if (json.message && (json.message === "404: Not Found" || json.message === "Unknown Invite")) {
