@@ -23,8 +23,8 @@ module.exports = {
                 { name: `Ping`, value: `${bot.ws.ping}ms`, inline: true },
                 { name: `Propozycje`, value: `https://github.com/kCyfer/craftserve-bot/issues`}
             )
-            .setThumbnail('https://awisniewski.eu/images/csrv.png')
-            .setFooter("Powered by AWisniewski.eu")
+            .setThumbnail('https://cubical.pro/images/csrv.png')
+            .setFooter("Powered by Cubical.pro")
             .setTimestamp()
         return message.channel.send("", embed)
     }
