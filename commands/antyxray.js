@@ -13,7 +13,7 @@ module.exports = {
     run: (bot, args, message) => {
         const embed = bot.embed
             .setTitle("Anti-Xray w paper.yml")
-            .setDescription("Silnik Paper, wraz z jego forkami posiadają wbudowany system **anti-xray**. By z niego skorzystać wystarczy ustawić go w pliku `paper.yml`.\n\n Rekomendowane ustawienia anty-xraya (razem z netherem) znajdziesz [**tutaj**](<https://docs.papermc.io/paper/anti-xray>)")
+            .setDescription("Silnik Paper, wraz z jego forkami posiadają wbudowany system **anti-xray**. By z niego skorzystać wystarczy ustawić go w pliku `paper.yml` (od 1.19 lokalizacja plików konfiguracyjnych Paper uległa zmianie).\n\n Rekomendowane ustawienia anty-xraya (razem z netherem) znajdziesz [**tutaj**](<https://docs.papermc.io/paper/anti-xray>)")
 
         const text = args.join(" ");
 

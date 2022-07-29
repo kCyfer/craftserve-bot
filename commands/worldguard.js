@@ -13,7 +13,7 @@ module.exports = {
     run: (bot, args, message) => {
         const embed = bot.embed
             .setTitle("WorldGuard na serwerze")
-            .setDescription('Informacje na temat worldguarda znajdziesz tutaj:\nhttps://github.com/Craftserve/docs/blob/master/worldguard.md')
+            .setDescription('Informacje na temat worldguarda znajdziesz tutaj:\nhttps://github.com/Craftserve/docs/blob/master/worldguard.md \n\n [**>>POBIERZ<<**](https://dev.bukkit.org/projects/worldguard/files)')
 
 
         const text = args.join(" ");
