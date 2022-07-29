@@ -18,7 +18,7 @@ module.exports = {
                 'Warto jest również zmniejszyć rozmiar mapy np. za pomocą pluginu "WorldBorder", uniemożliwi to graczom nieskończone renderowanie świata.\n\n' +
                 'Możesz także usunąć wygenerowane chunki, które nie są potrzebne. Zwolni to najwięcej miejsca na dysku. Można to zrobić za pomocą programu MCASelector. ' +
                 'Poradnik do niego znajduje się [tutaj](https://github.com/Querz/mcaselector#usage), a pobiera się [tu](https://github.com/Querz/mcaselector/releases/latest).\n\n' +
-                'Jeśli twój serwer opiera się na modyfikacjach, sprawdź czy nie ma wśród nich moda na **backupy**, - jeśli jest usuń go i stworzone przez niego pliki.\n\n' +
+                'Jeśli twój serwer opiera się na modyfikacjach, sprawdź czy nie ma wśród nich moda na **backupy**, jeśli jest - usuń go i stworzone przez niego pliki.\n\n' +
                 '*Posiadacze pakietu Diamond mogą napisać prośbę o zwiększenie miejsca na serwerze w uzasadnionych przypadkach. (!support)*')
 
 
