@@ -37,6 +37,16 @@ module.exports.message = async (bot, message) => {
         .setDescription(`${message.author}, nie możesz wysyłać zaproszeń!`)
         .setColor("RED");
 
+    const time = new Date(new Date().getTime() + (180 * 1000))
+    bot.api.guilds[message.guild.id].members[message.member.id].patch({
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        data: {
+            'communication_disabled_until': time,
+        },
+    }).catch(console.error)
+
 
     try {
         await message.delete();
@@ -60,6 +70,16 @@ module.exports.edit = async (bot, oldMessage, message) => {
     const embed = new Discord.MessageEmbed()
         .setDescription(`${message.author}, nie możesz wysyłać zaproszeń!`)
         .setColor("RED");
+
+    const time = new Date(new Date().getTime() + (180 * 1000))
+    bot.api.guilds[message.guild.id].members[message.member.id].patch({
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        data: {
+            'communication_disabled_until': time,
+        },
+    }).catch(console.error)
 
 
     try {
