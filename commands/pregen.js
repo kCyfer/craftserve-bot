@@ -13,7 +13,7 @@ module.exports = {
     run: (bot, args, message) => {
         const embed = bot.embed
             .setTitle("Pregen mapy")
-            .setDescription('Mordo, mordunio, wygeneruj mapę w ten sposób: **https://github.com/Craftserve/docs/blob/master/pregen.md**')
+            .setDescription('Jednym z ważniejszych etapów robienia serwera jest wygenerowanie świata. Pomaga to m.in. w zmniejszeniu lagów. Aby to zrobić należy wgrać plugin [chunky](https://spigotmc.org/resources/chunky.81534/) oraz wpisać dwie komendy **/chunky radius <zasięg>** oraz **/chunky start**. \nDokładny opis plugin można znaleźć pod tym [linkiem](<https://github.com/pop4959/Chunky/wiki/Commands>).')
 
 
         const text = args.join(" ");
