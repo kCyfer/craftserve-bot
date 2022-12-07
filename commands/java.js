@@ -13,7 +13,7 @@ module.exports = {
     run: (bot, args, message) => {
         const embed = bot.embed
             .setTitle("Zmiana wersji Javy")
-            .setDescription('Wersje 1.17 i 1.18 wprowadzają wymóg używania odpowiednio javy 16 i 17. By zmienić wersję javy należy wybrać wersję, która nas interesuje oraz zatwierdzić dwa razy.');
+            .setDescription('Minecraft 1.17 oraz 1.18 wprowadzają wymóg używania odpowiednio Javy 16 i 17.\n\nPanel Craftserve przy wyborze silnika sam rozpoznaje czy wymagana jest zmiana wersji Javy - w takiej sytuacji zostaniemy poproszeni o potwierdzenie zmiany dwa razy (raz dla silnika oraz raz dla wersji Javy).');
 
         const text = args.join(" ");
 
