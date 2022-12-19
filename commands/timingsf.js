@@ -13,7 +13,7 @@ module.exports = {
     run: (bot, args, message) => {
         const embed = bot.embed
             .setTitle("Timingi Forge")
-            .setDescription('https://mcforge.readthedocs.io/en/latest/gettingstarted/debugprofiler/')
+            .setDescription('https://docs.minecraftforge.net/en/latest/misc/debugprofiler/')
 
 
         const text = args.join(" ");
