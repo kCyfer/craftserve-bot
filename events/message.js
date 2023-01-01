@@ -33,5 +33,12 @@ module.exports = async (bot, message) => {
         .setFooter(`Komenda ${config.prefix+command.name} | ${message.author.tag}`)
         .setTimestamp()
 
-    if(command) command.run(bot, args, message)
+    if(command) {
+        await message.channel.send("", new Discord.MessageEmbed()
+            .setDescription("**Wkrótce komendy z `!` zostaną całkowicie zastąpione przez komendy discordowe(`/`)**")
+            .setImage("https://i.imgur.com/N0Vx5yr.gif")
+            .setColor("RED")
+        )
+        await command.run(bot, args, message)
+    }
 }
