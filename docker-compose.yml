@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  bot:
+    image: ghcr.io/some0ne3/craftserve-bot:latest
+    restart: always
+    environment:
+      TOKEN:
+      OWNER_ID:
+      MANAGEMENT_GUILD_ID:
+      MONGO_URL: mongodb://mongo:27017/csrvBot
+    links:
+      - mongo
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo
+    volumes:
+      - ./data:/data/db
